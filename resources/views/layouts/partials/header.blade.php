@@ -52,6 +52,35 @@
                   <li class="rd-nav-item"><a class="rd-nav-link" href="contacts.html">Contact</a>
                   </li>
 
+
+                  @guest
+
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('login') }}">Login</a>
+                  </li>
+
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="{{ route('register') }}">Register</a>
+                  </li>
+
+                  @else
+
+                  <li class="rd-nav-item">
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-expanded="false" style="font-size: 1.1rem">
+                        Name
+                      </button>
+                      <div class="dropdown-menu">
+
+                        <a class="dropdown-item" href="#">My Orders</a>
+                        <div class="dropdown-divider"></div>
+
+                      </div>
+                    </div>
+
+                  </li>
+
+                  @endguest
+
                   <li class="rd-nav-item">
                     <div class="dropdown">
                       <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
